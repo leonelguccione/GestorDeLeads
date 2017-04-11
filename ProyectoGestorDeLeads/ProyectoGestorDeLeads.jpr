@@ -71,7 +71,14 @@
    <value n="defaultPackage" v="proyectogestordeleads"/>
    <hash n="oracle.ide.model.TechnologyScopeConfiguration">
       <list n="technologyScope">
+         <string v="ADFbc-Modeling"/>
+         <string v="Database"/>
+         <string v="Database-Modeling"/>
+         <string v="EJB-Modeling"/>
          <string v="Java"/>
+         <string v="Java-Modeling"/>
+         <string v="UML"/>
+         <string v="XML"/>
       </list>
    </hash>
    <hash n="oracle.jdeveloper.compiler.OjcConfiguration">
