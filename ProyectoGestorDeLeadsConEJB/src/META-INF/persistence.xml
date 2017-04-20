@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+  <persistence-unit name="ProyectoGestorDeLeads">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>proyectogestordeleads.Gestor</class>
+    <class>proyectogestordeleads.Empleado</class>
+    <class>proyectogestordeleads.IngenieroDeClientes</class>
+    <class>proyectogestordeleads.EjecutivoDeCuentas</class>
+    <class>proyectogestordeleads.Proyecto</class>
+    <class>proyectogestordeleads.Tarea</class>
+    <class>proyectogestordeleads.Necesidad</class>
+    <class>proyectogestordeleads.Conversacion</class>
+    <properties>
+      <property name="eclipselink.target-server" value="WebLogic_10"/>
+    </properties>
+  </persistence-unit>
+</persistence>

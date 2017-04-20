@@ -25,5 +25,6 @@
    </list>
    <list n="listOfChildren">
       <hash><url n="URL" path="ProyectoGestorDeLeads/ProyectoGestorDeLeads.jpr"/></hash>
+      <hash><url n="URL" path="ProyectoGestorDeLeadsConEJB/ProyectoGestorDeLeadsConEJB.jpr"/></hash>
    </list>
 </jws:workspace>
