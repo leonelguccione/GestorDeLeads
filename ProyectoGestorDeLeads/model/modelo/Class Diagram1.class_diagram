@@ -223,7 +223,7 @@
             <property xmi:type='DI:Property' key='columnGap' value='2.0'/>
             <property xmi:type='DI:Property' key='rowGap' value='0.0'/>
             <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='table'/>
-            <size xmi:type='DI:Dimension' height='85.390625' width='116.0'/>
+            <size xmi:type='DI:Dimension' height='10.0' width='10.0'/>
           </contained>
           <contained xmi:type='DI:GraphNode' xmi:id='id3cc50c62-db89-4054-9bef-aa859b017597'>
             <contained xmi:type='DI:GraphNode' xmi:id='id0a7636ab-1598-4d3c-8442-8ed754c17de8'>
@@ -236,7 +236,7 @@
               <size xmi:type='DI:Dimension' height='116.0' width='10.0'/>
             </contained>
             <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='columns'/>
-            <size xmi:type='DI:Dimension' height='85.390625' width='116.0'/>
+            <size xmi:type='DI:Dimension' height='10.0' width='10.0'/>
           </contained>
           <contained xmi:type='DI:GraphNode' xmi:id='id5116f0db-b386-4b64-8714-b6020275b58b'>
             <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='subShapeLinks'/>
@@ -2662,11 +2662,11 @@
     </contained>
     <contained xmi:type='DI:GraphEdge' xmi:id='id57f3ddab-21b2-49f9-a5af-0b428c06fec3' anchor='idd1494023-0c5c-4ea2-a490-6921be8d1acb id9833feb3-a1bf-4b55-a6c3-f758a841eff5'>
       <contained xmi:type='DI:GraphNode' xmi:id='ide8248fb4-9b74-40ae-a57d-ebb358bc5287'>
-        <position xmi:type='DI:Point' x='-57.0' y='-62.4808349609375'/>
+        <position xmi:type='DI:Point' x='-57.0' y='41.6761474609375'/>
         <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='stereotype'/>
       </contained>
       <contained xmi:type='DI:GraphNode' xmi:id='id5c57e92a-86a4-4298-b0b8-9b416db42d46'>
-        <position xmi:type='DI:Point' x='-35.5' y='4.0'/>
+        <position xmi:type='DI:Point' x='-35.5' y='24.8046875'/>
         <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='name'/>
       </contained>
       <contained xmi:type='DI:GraphNode' xmi:id='id90380f3e-b9a5-4041-90f6-633bdfcfc1e6'>
@@ -2690,8 +2690,8 @@
       <waypoint xmi:type='DI:Point' x='117.29861450195312' y='68.4609375'/>
       <waypoint xmi:type='DI:Point' x='117.29861450195312' y='94.56502532958984'/>
       <waypoint xmi:type='DI:Point' x='375.5' y='94.56502532958984'/>
-      <waypoint xmi:type='DI:Point' x='375.5' y='-29.399993896484375'/>
-      <waypoint xmi:type='DI:Point' x='540.0' y='-29.399993896484375'/>
+      <waypoint xmi:type='DI:Point' x='375.5' y='94.19652557373047'/>
+      <waypoint xmi:type='DI:Point' x='540.0' y='94.19652557373047'/>
     </contained>
     <contained xmi:type='DI:GraphEdge' xmi:id='idb16123be-4d71-47e4-8172-4bfd672494b5' anchor='idd1494023-0c5c-4ea2-a490-6921be8d1acb idc8360b9f-738b-41e0-862f-db75bc1b3599'>
       <contained xmi:type='DI:GraphNode' xmi:id='idf5beb773-c9cc-4079-aed3-d2ac8a81f34a'>
@@ -2945,6 +2945,17 @@
       <waypoint xmi:type='DI:Point' x='-423.5' y='394.7412414550781'/>
       <waypoint xmi:type='DI:Point' x='-423.5' y='409.7412414550781'/>
       <waypoint xmi:type='DI:Point' x='-472.0' y='409.7412414550781'/>
+    </contained>
+    <contained xmi:type='DI:GraphNode' xmi:id='id93476846-0d18-4398-a956-15e60ce2cacd'>
+      <position xmi:type='DI:Point' x='1005.0000610351562' y='510.0'/>
+      <property xmi:type='DI:Property' key='text' value='&lt;html>&#xa;  &lt;head>&#xa;    &#xa;  &lt;/head>&#xa;  &lt;body>&#xa;    &lt;p>&#xa;      &lt;font face=&quot;SansSerif&quot; size=&quot;3&quot; color=&quot;#000000&quot;>Un proyecto tiene un &#xa;      ingeniero de clientes.&#xa;&lt;/font>    &lt;/p>&#xa;    &lt;p>&#xa;      &lt;font face=&quot;SansSerif&quot; size=&quot;3&quot; color=&quot;#000000&quot;>un ingeniero de clientes &#xa;      puede estar en varios proyectos.&#xa;&lt;/font>    &lt;/p>&#xa;    &lt;p>&#xa;      &lt;font face=&quot;SansSerif&quot; size=&quot;3&quot; color=&quot;#000000&quot;>Un proyecto tiene varios &#xa;      ejecutivos de cuenta.&#xa;&lt;/font>    &lt;/p>&#xa;    &lt;p>&#xa;      &lt;font face=&quot;SansSerif&quot; size=&quot;3&quot; color=&quot;#000000&quot;>Un ejecutivo de cuentas &#xa;      puede estar en varios proyectos.&lt;/font>&#xa;    &lt;/p>&#xa;  &lt;/body>&#xa;&lt;/html>&#xa;'/>
+      <property xmi:type='DI:Property' key='fontColor' value='#0'/>
+      <property xmi:type='DI:Property' key='font' value='SansSerif,plain,11'/>
+      <property xmi:type='DI:Property' key='fillColor' value='#ffffcc'/>
+      <property xmi:type='DI:Property' key='lineColor' value='#a5a5a5'/>
+      <property xmi:type='DI:Property' key='lineWidth' value='1.0'/>
+      <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='Note'/>
+      <size xmi:type='DI:Dimension' height='120.0' width='388.11981201171875'/>
     </contained>
     <property xmi:type='DI:Property' key='maxShapeWidth' value='400'/>
     <property xmi:type='DI:Property' key='PageOrientation' value='1'/>
