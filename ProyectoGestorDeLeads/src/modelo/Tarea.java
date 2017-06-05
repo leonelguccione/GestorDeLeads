@@ -5,101 +5,90 @@ import java.util.Date;
 
 public class Tarea
 {
-    private EjecutivoDeCuentas responsable;
-    private int nivelPrioridad;
-    private String descripcion;
-    private Date fechaAlta;
-    private Date fechaCompromisoFinalizacion;
-    private Date fechaFinalizacion;
-    private Estado estado;
+  /**
+   * @aggregation shared
+   */
+  private EjecutivoDeCuentas ejecutivoDeCuentas;
+  private int nivelPrioridad;
+  private String descripcion;
+  private Date fechaAlta;
+  private Date fechaCompromisoFinalizacion;
+  private Date fechaFinalizacion;
+  private Estado estado;
 
-    /**
-     * @aggregation composite
-     */
-    private Proyecto proyecto;
-    
-    public Tarea()
-    {
-        
-    }
+  public Tarea()
+  {
 
-    public void setResponsable(EjecutivoDeCuentas responsable)
-    {
-        this.responsable = responsable;
-    }
+  }
 
-    public EjecutivoDeCuentas getResponsable()
-    {
-        return responsable;
-    }
+  public void setEjecutivoDeCuentas(EjecutivoDeCuentas ejecutivoDeCuentas)
+  {
+    this.ejecutivoDeCuentas = ejecutivoDeCuentas;
+  }
 
-    public void setNivelPrioridad(int nivelPrioridad)
-    {
-        this.nivelPrioridad = nivelPrioridad;
-    }
+  public EjecutivoDeCuentas getEjecutivoDeCuentas()
+  {
+    return ejecutivoDeCuentas;
+  }
 
-    public int getNivelPrioridad()
-    {
-        return nivelPrioridad;
-    }
 
-    public void setDescripcion(String descripcion)
-    {
-        this.descripcion = descripcion;
-    }
+  public void setNivelPrioridad(int nivelPrioridad)
+  {
+    this.nivelPrioridad = nivelPrioridad;
+  }
 
-    public String getDescripcion()
-    {
-        return descripcion;
-    }
+  public int getNivelPrioridad()
+  {
+    return nivelPrioridad;
+  }
 
-    public void setFechaAlta(Date fechaAlta)
-    {
-        this.fechaAlta = fechaAlta;
-    }
+  public void setDescripcion(String descripcion)
+  {
+    this.descripcion = descripcion;
+  }
 
-    public Date getFechaAlta()
-    {
-        return fechaAlta;
-    }
+  public String getDescripcion()
+  {
+    return descripcion;
+  }
 
-    public void setFechaCompromisoFinalizacion(Date fechaCompromisoFinalizacion)
-    {
-        this.fechaCompromisoFinalizacion = fechaCompromisoFinalizacion;
-    }
+  public void setFechaAlta(Date fechaAlta)
+  {
+    this.fechaAlta = fechaAlta;
+  }
 
-    public Date getFechaCompromisoFinalizacion()
-    {
-        return fechaCompromisoFinalizacion;
-    }
+  public Date getFechaAlta()
+  {
+    return fechaAlta;
+  }
 
-    public void setFechaFinalizacion(Date fechaFinalizacion)
-    {
-        this.fechaFinalizacion = fechaFinalizacion;
-    }
+  public void setFechaCompromisoFinalizacion(Date fechaCompromisoFinalizacion)
+  {
+    this.fechaCompromisoFinalizacion = fechaCompromisoFinalizacion;
+  }
 
-    public Date getFechaFinalizacion()
-    {
-        return fechaFinalizacion;
-    }
+  public Date getFechaCompromisoFinalizacion()
+  {
+    return fechaCompromisoFinalizacion;
+  }
 
-    public void setEstado(Estado estado)
-    {
-        this.estado = estado;
-    }
+  public void setFechaFinalizacion(Date fechaFinalizacion)
+  {
+    this.fechaFinalizacion = fechaFinalizacion;
+  }
 
-    public Estado getEstado()
-    {
-        return estado;
-    }
+  public Date getFechaFinalizacion()
+  {
+    return fechaFinalizacion;
+  }
 
-    public void setProyecto(Proyecto proyecto)
-    {
-        this.proyecto = proyecto;
-    }
+  public void setEstado(Estado estado)
+  {
+    this.estado = estado;
+  }
 
-    public Proyecto getProyecto()
-    {
-        return proyecto;
-    }
+  public Estado getEstado()
+  {
+    return estado;
+  }
 }

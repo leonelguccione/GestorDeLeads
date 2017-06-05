@@ -5,8 +5,9 @@ import java.util.Collection;
 public class EjecutivoDeCuentas extends Empleado
 {
     /**
-     * @associates <{modelo.Tarea}>
-     */
+   * @associates <{modelo.Tarea}>
+   * @aggregation shared
+   */
     private Collection<Tarea> tareas;
     
     public EjecutivoDeCuentas()
