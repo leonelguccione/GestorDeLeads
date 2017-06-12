@@ -1,64 +1,81 @@
 package modelo;
 
+import java.util.Collection;
 import java.util.Date;
 
 
 public class Necesidad
 {
-    private String descripcion;
-    private Date fecha;
+  private Long id;
+  private String descripcion;
+  private Date fecha;
 
-    /**
-     * @aggregation composite
-     */
-    private Proyecto proyecto;
+  /**
+   * @associates <{modelo.Conversacion}>
+   * @aggregation composite
+   */
+  private Collection<Conversacion> conversaciones;
 
-    /**
-     * @aggregation shared
-     */
-    private Tercero tercero;
+  /**
+   * @associates <{modelo.TareaProgramada}>
+   * @aggregation composite
+   */
+  private Collection<TareaProgramada> tareasProgramadas;
 
-    public Necesidad()
-    {
-    }
 
-    public void setDescripcion(String descripcion)
-    {
-        this.descripcion = descripcion;
-    }
+  public Necesidad()
+  {
+  }
 
-    public String getDescripcion()
-    {
-        return descripcion;
-    }
+  public void setConversaciones(Collection<Conversacion> conversaciones)
+  {
+    this.conversaciones = conversaciones;
+  }
 
-    public void setFecha(Date fecha)
-    {
-        this.fecha = fecha;
-    }
+  public Collection<Conversacion> getConversaciones()
+  {
+    return conversaciones;
+  }
 
-    public Date getFecha()
-    {
-        return fecha;
-    }
+  public void setTareasProgramadas(Collection<TareaProgramada> tareasProgramadas)
+  {
+    this.tareasProgramadas = tareasProgramadas;
+  }
 
-    public void setProyecto(Proyecto proyecto)
-    {
-        this.proyecto = proyecto;
-    }
+  public Collection<TareaProgramada> getTareasProgramadas()
+  {
+    return tareasProgramadas;
+  }
 
-    public Proyecto getProyecto()
-    {
-        return proyecto;
-    }
+  public void setId(Long id)
+  {
+    this.id = id;
+  }
 
-    public void setTercero(Tercero tercero)
-    {
-        this.tercero = tercero;
-    }
+  public Long getId()
+  {
+    return id;
+  }
 
-    public Tercero getTercero()
-    {
-        return tercero;
-    }
+  public void setDescripcion(String descripcion)
+  {
+    this.descripcion = descripcion;
+  }
+
+  public String getDescripcion()
+  {
+    return descripcion;
+  }
+
+  public void setFecha(Date fecha)
+  {
+    this.fecha = fecha;
+  }
+
+  public Date getFecha()
+  {
+    return fecha;
+  }
+
+  
 }

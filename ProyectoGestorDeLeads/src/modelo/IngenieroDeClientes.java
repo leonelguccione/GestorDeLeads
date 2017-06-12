@@ -2,27 +2,29 @@ package modelo;
 
 import java.util.Collection;
 
-public class IngenieroDeClientes extends Empleado
+public class IngenieroDeClientes
+  extends Empleado
 {
 
-  /**
-   * @associates <{modelo.Proyecto}>
-   */
-  private Collection<Proyecto> proyectos;
 
   /**
-   * @associates <{modelo.Proyecto}>
-   * @aggregation shared
+   * @associates <{modelo.Tercero}>
    */
- 
+  private Collection<Tercero> tercero;
+
 
   public IngenieroDeClientes()
-    {
-        
-    }
-   
-    public void removeEjecutivo(String dni)
-    {
-        
-    }
+  {
+    super();
+  }
+  
+  public IngenieroDeClientes(Long id, String apellido, String nombre, String dni)
+  {
+    super(id,apellido,nombre,dni);
+  }
+
+  public void removeEjecutivo(String dni)
+  {
+
+  }
 }

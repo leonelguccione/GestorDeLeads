@@ -4,31 +4,42 @@ import java.util.Date;
 
 public class Conversacion
 {
-    String descripcion;
-    Date fecha;
+  private Long id;
+  private String descripcion;
+  private Date fecha;
 
-    public Conversacion()
-    {
+  public Conversacion()
+  {
 
-    }
+  }
 
-    public void setDescripcion(String descripcion)
-    {
-        this.descripcion = descripcion;
-    }
+  public void setId(Long id)
+  {
+    this.id = id;
+  }
 
-    public String getDescripcion()
-    {
-        return descripcion;
-    }
+  public Long getId()
+  {
+    return id;
+  }
 
-    public void setFecha(Date fecha)
-    {
-        this.fecha = fecha;
-    }
+  public void setDescripcion(String descripcion)
+  {
+    this.descripcion = descripcion;
+  }
 
-    public Date getFecha()
-    {
-        return fecha;
-    }
+  public String getDescripcion()
+  {
+    return descripcion;
+  }
+
+  public void setFecha(Date fecha)
+  {
+    this.fecha = fecha;
+  }
+
+  public Date getFecha()
+  {
+    return fecha;
+  }
 }

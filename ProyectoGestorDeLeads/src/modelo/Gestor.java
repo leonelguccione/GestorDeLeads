@@ -2,6 +2,8 @@ package modelo;
 
 import java.util.Collection;
 
+import proyectogestordeleads.Proyecto;
+
 public class Gestor
 {
     /**
@@ -16,13 +18,8 @@ public class Gestor
      */
     private Collection<Empleado> empleados;
 
-    /**
-     * @associates <{modelo.Proyecto}>
-     * @aggregation composite
-     */
-    private Collection<Proyecto> proyectos;
-    
-    public Gestor()
+
+  public Gestor()
     {
         
     }
@@ -47,13 +44,4 @@ public class Gestor
         return empleados;
     }
 
-    public void setProyectos(Collection<Proyecto> proyectos)
-    {
-        this.proyectos = proyectos;
-    }
-
-    public Collection<Proyecto> getProyectos()
-    {
-        return proyectos;
-    }
 }

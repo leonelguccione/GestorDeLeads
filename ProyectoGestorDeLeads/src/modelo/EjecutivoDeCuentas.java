@@ -4,24 +4,24 @@ import java.util.Collection;
 
 public class EjecutivoDeCuentas extends Empleado
 {
-    /**
-   * @associates <{modelo.Tarea}>
-   * @aggregation shared
+
+  /**
+   * @associates <{modelo.TareaProgramada}>
    */
-    private Collection<Tarea> tareas;
-    
-    public EjecutivoDeCuentas()
+  private Collection<TareaProgramada> tareasProgramadas;
+
+  public EjecutivoDeCuentas()
     {
         
     }
 
-    public void setTareas(Collection<Tarea> tareas)
+    public void setTareas(Collection<TareaProgramada> tareas)
     {
-        this.tareas = tareas;
+        this.tareasProgramadas = tareas;
     }
 
-    public Collection<Tarea> getTareas()
+    public Collection<TareaProgramada> getTareas()
     {
-        return tareas;
+        return tareasProgramadas;
     }
 }

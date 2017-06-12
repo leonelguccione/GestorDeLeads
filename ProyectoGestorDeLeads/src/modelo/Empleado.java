@@ -4,13 +4,32 @@ import java.util.Collection;
 
 public class Empleado
 {
-  String apellido;
-  String nombre;
-  String dni;
+  protected Long id;
+  private String apellido;
+  private String nombre;
+  private String dni;
 
   public Empleado()
   {
 
+  }
+
+  public Empleado(Long id, String apellido, String nombre, String dni)
+  {
+    this.id = id;
+    this.apellido = apellido;
+    this.nombre = nombre;
+    this.dni = dni;
+  }
+
+  public void setId(Long id)
+  {
+    this.id = id;
+  }
+
+  public Long getId()
+  {
+    return id;
   }
 
   public void setApellido(String apellido)
