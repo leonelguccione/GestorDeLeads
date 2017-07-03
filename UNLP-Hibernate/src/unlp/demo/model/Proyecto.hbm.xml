@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="unlp.demo.model">
+
+<class name="Proyecto">
+ 
+    <id name="idProyecto" column="id_proyecto">
+        <generator class="org.hibernate.id.TableHiLoGenerator"/>
+    </id>
+
+	<property name="descripcion" />
+	<property name="fechaInicio" />
+	<property name="fechaFin" />
+
+    <set name="tareas" cascade="all"> 
+        <key column="id_proyecto"  />
+        <one-to-many class="Tarea" />
+    </set>
+    
+    <many-to-one name="cliente" 
+		     column="id_cliente"  
+               not-null="true"
+		     cascade="all"/>
+    
+	<many-to-one name="supervisor" 
+		    column="id_empleado"
+		    not-null="true"
+		    cascade="all" />
+
+	<set name="tecnicos" table="proyecto_tecnico" inverse="true" cascade="all">
+		<key column="id_proyecto" />
+		<many-to-many column="id_empleado" class="Tecnico"/>
+	</set>
+
+</class>
+</hibernate-mapping>

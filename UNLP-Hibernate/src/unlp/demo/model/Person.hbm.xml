@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="unlp.demo.model">
+	<class name="Person">
+
+		<id name="oid" type="long" column="user" unsaved-value="0">
+			<generator class="org.hibernate.id.TableHiLoGenerator" />
+		</id>
+		
+		<property name="name" />
+		<property name="surname" />
+		
+
+<many-to-one name="phone" 
+        	     column="phone_oid"
+		     unique="true"
+		     not-null="true"
+		     cascade="all" />
+
+	</class>
+</hibernate-mapping>

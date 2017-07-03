@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 12/06/2017 11:10:02 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+	<class name="modelo.TareaProgramada" table="TAREAPROGRAMADA">
+		<id name="id_tareaProgramada" type="java.lang.Long">
+			<column name="ID_TAREAPROGRAMADA" />
+			<generator class="assigned" />
+		</id>
+		<property name="nivelPrioridad" type="int">
+			<column name="NIVELPRIORIDAD" />
+		</property>
+		<property name="descripcion" type="java.lang.String">
+			<column name="DESCRIPCION" />
+		</property>
+		<property name="fechaAlta" type="java.util.Date">
+			<column name="FECHAALTA" />
+		</property>
+		<property name="desde" type="java.util.Date" access="field">
+			<column name="DESDE" />
+		</property>
+		<property name="hasta" type="java.util.Date" access="field">
+			<column name="HASTA" />
+		</property>
+		<property name="estado">
+			<column name="ESTADO" />
+			<type name="org.hibernate.type.EnumType">
+				<param name="type">12</param>
+				<param name="enumClass">modelo.Estado</param>
+			</type>
+		</property>
+
+		<!-- RELACIÓN bidireccional MUCHOS A MUCHOS TareaProgramada con EjecutivoDeCuentas -->
+		<set name="responsables" table="TAREAS_EJECUTIVOS" cascade="all"> <!-- lazy="true" access="field"> -->
+			<key column="ID_TAREAPROGRAMADA" />
+			<many-to-many class="modelo.EjecutivoDeCuentas" column="ID_EMPLEADO" />
+		</set>
+
+		<!-- relación bidireccional uno a muchos: Necesidad con TareaProgramada -->
+		<many-to-one name="necesidad" cascade="all" class="modelo.Necesidad" not-null="true">
+			<column name="ID_NECESIDAD" />
+		</many-to-one>
+
+
+	</class>
+</hibernate-mapping>

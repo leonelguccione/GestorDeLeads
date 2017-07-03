@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost/database_leads</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">leonel</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="current_session_context_class">thread</property>
+		<property name="connection.autocommit">true</property>
+		<!-- 
+		<property name="hbm2ddl.auto">create</property>
+		 -->		
+		<mapping resource="modelo/Conversacion.hbm.xml" />
+		<mapping resource="modelo/Empleado.hbm.xml" />
+		<mapping resource="modelo/Gestor.hbm.xml" />		
+		<mapping resource="modelo/Necesidad.hbm.xml" />
+		<mapping resource="modelo/TareaProgramada.hbm.xml" />
+		<mapping resource="modelo/Tercero.hbm.xml" />
+	</session-factory>
+</hibernate-configuration>

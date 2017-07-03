@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 12/06/2017 11:10:02 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+	<class name="modelo.Conversacion" table="CONVERSACION">
+		<id name="id_conversacion" type="java.lang.Long">
+			<column name="ID_CONVERSACION" />
+			<generator class="assigned" />
+		</id>
+		<property name="descripcion" type="java.lang.String">
+			<column name="DESCRIPCION" />
+		</property>
+		<property name="fecha" type="java.util.Date">
+			<column name="FECHA" />
+		</property>
+
+		<!-- relación unidireccional uno a muchos: Necesidad con Conversación -->
+		<!-- no se pone nada, ya que la navegabilidad comienza desde Necesidad -->
+		
+	</class>
+</hibernate-mapping>

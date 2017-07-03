@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 12/06/2017 11:10:02 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+	<class name="modelo.Tercero" table="TERCERO">
+		<id name="id" type="java.lang.Long">
+			<column name="ID" />
+			<generator class="assigned" />
+		</id>
+		<property name="apellido" type="java.lang.String">
+			<column name="APELLIDO" />
+		</property>
+		<property name="nombre" type="java.lang.String">
+			<column name="NOMBRE" />
+		</property>
+		<property name="domicilio" type="java.lang.String">
+			<column name="DOMICILIO" />
+		</property>
+		<property name="dni" type="java.lang.String">
+			<column name="DNI" />
+		</property>
+
+		<set name="necesidades" table="NECESIDAD" lazy="false" cascade = "all">
+			<key>
+				<column name="ID" />
+			</key>
+			<one-to-many class="modelo.Necesidad" />
+		</set>
+
+		<property name="tipo">
+			<column name="TIPO" />
+			<type name="org.hibernate.type.EnumType">
+				<param name="type">12</param>
+				<param name="enumClass">modelo.Tipo</param>
+			</type>
+		</property>
+
+		<!-- Relación bidireccional uno a muchos: IngenieroDeClientes(hija de Empleado) con Tercero -->
+		<many-to-one name="ingenieroDeClientes" cascade="all"
+			class="modelo.IngenieroDeClientes" not-null="false" fetch="join">
+			<column name="ID_EMPLEADO" />
+		</many-to-one>
+
+
+	</class>
+</hibernate-mapping>

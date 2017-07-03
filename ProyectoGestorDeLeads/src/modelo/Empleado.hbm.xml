@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 12/06/2017 11:10:02 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+	<class name="modelo.Empleado" table="EMPLEADO">
+		<id name="id_empleado" type="java.lang.Long">
+			<column name="ID_EMPLEADO" />
+			<generator class="assigned" />
+		</id>
+		<property name="apellido" type="java.lang.String">
+			<column name="APELLIDO" />
+		</property>
+		<property name="nombre" type="java.lang.String">
+			<column name="NOMBRE" />
+		</property>
+		<property name="dni" type="java.lang.String">
+			<column name="DNI" />
+		</property>
+
+		<joined-subclass name="modelo.IngenieroDeClientes"
+			table="INGENIERODECLIENTES" lazy="false">
+			<key>
+				<column name="ID_EMPLEADO" />
+			</key>
+
+			<!-- Relación bidireccional uno a muchos: IngenieroDeClientes(hija de Empleado) con Tercero -->
+			<set name="terceros" table="TERCERO" inverse="true" lazy="true"
+				access="field" cascade="all">
+				<key>
+					<column name="ID_EMPLEADO" />
+				</key>
+				<one-to-many class="modelo.Tercero" />
+			</set>
+
+		</joined-subclass>
+
+		<joined-subclass name="modelo.EjecutivoDeCuentas"
+			table="EJECUTIVODECUENTAS" lazy="false">
+			<key>
+				<column name="ID_EMPLEADO" />
+			</key>
+
+			<!-- RELACIÓN bidireccional MUCHOS A MUCHOS TareaProgramada con EjecutivoDeCuentas -->
+			<set name="tareasProgramadas" table="TAREAS_EJECUTIVOS" inverse="true">
+				<key column="ID_EMPLEADO" />
+				<many-to-many class="modelo.TareaProgramada" column="ID_TAREAPROGRAMADA" />
+			</set>
+
+		</joined-subclass>
+
+	</class>
+</hibernate-mapping>

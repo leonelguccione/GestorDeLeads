@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 12/06/2017 11:10:02 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+	<class name="modelo.Necesidad" table="NECESIDAD">
+		<id name="id_necesidad" type="java.lang.Long">
+			<column name="ID_NECESIDAD" />
+			<generator class="assigned" />
+		</id>
+		<property name="descripcion" type="java.lang.String">
+			<column name="DESCRIPCION" />
+		</property>
+		<property name="fecha" type="java.util.Date">
+			<column name="FECHA" />
+		</property>
+
+		<!-- relación unidireccional uno a muchos: Necesidad con Conversación -->
+		<!-- agrega la columna ID_NECESIDAD a la tabla CONVERSACION -->
+		<set name="conversaciones" table="CONVERSACION" lazy="false"
+			cascade="all">
+			<key>
+				<column name="ID_NECESIDAD" />
+			</key>
+
+			<one-to-many class="modelo.Conversacion" />
+		</set>
+
+		<!-- relación bidireccional uno a muchos: Necesidad con TareaProgramada -->
+		<set name="tareasProgramadas" table="TAREAPROGRAMADA" inverse="true"
+			cascade="all">
+			<key>
+				<column name="ID_NECESIDAD" />
+			</key>
+			<one-to-many class="modelo.TareaProgramada" />
+		</set>
+	</class>
+</hibernate-mapping>

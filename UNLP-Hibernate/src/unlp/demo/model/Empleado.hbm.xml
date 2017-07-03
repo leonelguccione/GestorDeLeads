@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="unlp.demo.model">
+	<class name="Empleado" table="empleado">
+
+		<id name="idEmpleado" type="long" column="id_empleado"
+			unsaved-value="0">
+			<generator class="org.hibernate.id.TableHiLoGenerator" />
+		</id>
+
+		<discriminator column="tipo_empleado" type="string"/>
+
+		<property name="apellido" not-null="true" />
+		<property name="nombre" not-null="true" />
+		<property name="password" not-null="true" />
+		<property name="usuario" not-null="true" />
+
+		<component name="Domicilio" class="Domicilio" lazy="true">
+		<property name="calle" not-null="true" />
+		<property name="depto" />
+		<property name="localidad" not-null="true" />
+		<property name="numero" not-null="true" />
+		<property name="piso"></property>
+		</component>
+		
+	<subclass name="Tecnico" discriminator-value="Tec">
+		<property name="especialidad" column="especialidad" />
+		<set name="proyectos" table="proyecto_tecnico" cascade="all" >
+			<key column="id_empleado" />
+			<many-to-many column="id_proyecto" class="Proyecto" />
+		</set>
+	</subclass>
+	<subclass name="Supervisor" discriminator-value="Sup">
+		<set name="proyectos" inverse="true" cascade="all">
+		    <key column="id_empleado"/>
+		    <one-to-many class="Proyecto"/>
+	 	</set>
+	</subclass>
+	
+	
+
+</class>
+</hibernate-mapping>

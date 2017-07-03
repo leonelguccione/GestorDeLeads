@@ -2,34 +2,34 @@ package modelo;
 
 import java.util.Collection;
 
-public class Empleado
+public abstract class Empleado
 {
-  protected Long id;
+  protected Long id_empleado;
   private String apellido;
   private String nombre;
   private String dni;
 
   public Empleado()
   {
-
+    
   }
 
   public Empleado(Long id, String apellido, String nombre, String dni)
   {
-    this.id = id;
+    this.id_empleado = id;
     this.apellido = apellido;
     this.nombre = nombre;
     this.dni = dni;
   }
 
-  public void setId(Long id)
+  public void setId_empleado(Long id)
   {
-    this.id = id;
+    this.id_empleado = id;
   }
 
-  public Long getId()
+  public Long getId_empleado()
   {
-    return id;
+    return id_empleado;
   }
 
   public void setApellido(String apellido)
@@ -61,4 +61,13 @@ public class Empleado
   {
     return dni;
   }
+
+@Override
+public String toString()
+{
+	return "Empleado [id_empleado=" + id_empleado + ", apellido=" + apellido + ", nombre=" + nombre + ", dni=" + dni
+			+ "]";
+}
+  
+  
 }
